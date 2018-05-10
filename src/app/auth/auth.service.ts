@@ -15,6 +15,11 @@ export class AuthService {
 
   }
   
- 
+ login(data:any){
+   return this.http.post('http://172.33.34.1:3000/login',data)
+   .map(res=>{
+     return res.json();
+   })
+ }
 
 }

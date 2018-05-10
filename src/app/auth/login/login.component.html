@@ -1,1 +1,41 @@
-<p>Login works</p>
+<aside style="height: 100vh;">
+    <main class="main">
+        <h1 class="text-center" style="color:#fff"> Full Stack Work Shop</h1>
+        <div style="position: absolute;top:48%;left:30px;color:#fff">
+            <h2>Digital Lync<br>
+            Welcomes you
+            </h2>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="end center" class="padding" style="height: 100vh;margin-right: 60px;">
+            <mat-card class="login-card padding-nill" style="position: fixed;border-radius:8px;width:28%;height:40%">
+                <mat-card-content>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center">
+                        <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100">
+                            <form novalidate autocomplete="off" [formGroup]="userDetails">
+                                <mat-card>
+                                    <mat-card-content>
+                                        <div fxLayout="row wrap" fxLayoutAlign="center center">
+                                            <h3 fxFlex="100" class="text-center" style="color:#1b80c3">
+                                                Login
+                                            </h3>
+                                            <div fxLayout="row wrap" fxLayoutAlign="center end">
+                                                <mat-form-field fxFlex="100">
+                                                    <input matInput placeholder="Email" required formControlName="email" [(ngModel)]="loginInfo.email">
+                                                </mat-form-field>
+                                                <mat-form-field fxFlex="100">
+                                                        <input matInput placeholder="Password" required formControlName="password" [(ngModel)]="loginInfo.password">
+                                                </mat-form-field>
+                                                    <button type="submit" mat-raised-button (click)="login()">Proceed</button>
+                                            </div>
+                                        </div>
+                                    </mat-card-content>
+                                </mat-card>
+                            </form>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </main>
+</aside>
