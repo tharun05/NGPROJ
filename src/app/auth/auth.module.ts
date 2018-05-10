@@ -6,13 +6,14 @@ import { RegisterComponent } from '../auth/register/register.component';
 import { SetpasswordComponent } from '../auth/setpassword/setpassword.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
+  { path: '', component: LoginComponent },
   { path: 'signin', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'setpassword', component: SetpasswordComponent }
@@ -28,14 +29,15 @@ const routes: Routes = [
     MatInputModule,
     RouterModule.forRoot(routes, { useHash: true }),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   declarations: [
     LoginComponent,
     RegisterComponent,
     SetpasswordComponent
   ],
-  exports: [RouterModule,MatCardModule,FlexLayoutModule,MatFormFieldModule,MatInputModule],
+  exports: [RouterModule, MatCardModule, FlexLayoutModule, MatFormFieldModule, MatInputModule],
   providers: [AuthService]
 })
 export class AuthModule { }
