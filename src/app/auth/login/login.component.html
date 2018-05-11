@@ -1,5 +1,5 @@
 <aside style="height: 100vh;">
-    <main class="main">
+    <main class="main" style="background: url(../../../assets/images/site-bg.png) no-repeat center center fixed; background-size: cover;">
         <h1 class="text-center" style="color:#fff"> Full Stack Work Shop</h1>
         <div style="position: absolute;top:48%;left:30px;color:#fff">
             <h2>Digital Lync<br>
@@ -13,7 +13,7 @@
                     <div fxLayout="row wrap" fxLayoutAlign="center center">
                         <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100">
                             <form novalidate autocomplete="off" [formGroup]="userDetails">
-                                <mat-card>
+                                <mat-card style="box-shadow: none;border-radius:16px;">
                                     <mat-card-content>
                                         <div fxLayout="row wrap" fxLayoutAlign="center center">
                                             <h3 fxFlex="100" class="text-center" style="color:#1b80c3">
@@ -23,9 +23,21 @@
                                                 <mat-form-field fxFlex="100">
                                                     <input matInput placeholder="Email" required formControlName="email" [(ngModel)]="loginInfo.email">
                                                 </mat-form-field>
+                                            <span class="error" *ngIf="userDetails.get('email').touched && userDetails.get('email').hasError('required')">
+                                                Email Required
+                                            </span>
+                                            <span class="error" *ngIf="userDetails.get('email').touched && userDetails.get('email').hasError('pattern')">
+                                               invalid Email
+                                            </span>
                                                 <mat-form-field fxFlex="100">
-                                                        <input matInput placeholder="Password" required formControlName="password" [(ngModel)]="loginInfo.password">
+                                                        <input matInput placeholder="Password" type="password" required formControlName="password" [(ngModel)]="loginInfo.password">
                                                 </mat-form-field>
+                                                <span class="error" *ngIf="userDetails.get('password').touched && userDetails.get('password').hasError('required')">
+                                                    password Required
+                                                </span>
+                                                <span class="error" *ngIf="userDetails.get('password').touched && userDetails.get('password').hasError('minLength')">
+                                                    password must be min 5 letter
+                                                </span>
                                                 <div fxFlex="row" fxLayoutAlign="start start">
                                                         <div fxFlex="100" fxLayoutAlign="center center">
                                                           <button type="submit" mat-raised-button class="proceed-btn" (click)="login()" [disabled]="userDetails.invalid">

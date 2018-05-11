@@ -10,10 +10,11 @@ import {AuthService} from '../auth.service'
 export class LoginComponent implements OnInit {
   userDetails:FormGroup;
   loginInfo:Login = new Login();
+  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   constructor( private authService:AuthService,private formBuilder:FormBuilder) { 
     this.userDetails = this.formBuilder.group({
-      'email':['',[Validators.required]],
-      'password':['',[Validators.required]]
+      'email':['',[Validators.required,Validators.pattern(this.emailPattern)]],
+      'password':['',[Validators.required,Validators.minLength(5)]]
     })
   }
 

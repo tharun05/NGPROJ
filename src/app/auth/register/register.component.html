@@ -1,1 +1,73 @@
-<p>register works</p>
+<aside style="height: 100vh;">
+    <main class="main" style="background: url(../../../assets/images/site-bg.png) no-repeat center center fixed; background-size: cover;">
+        <h1 class="text-center" style="color:#fff"> Full Stack Work Shop</h1>
+        <div style="position: absolute;top:48%;left:30px;color:#fff">
+            <h2>Digital Lync
+                <br> Welcomes you
+            </h2>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="end center" class="padding" style="height: 100vh;margin-right: 60px;">
+            <mat-card class="login-card padding-nill" style="position: fixed;border-radius:8px;width:28%;height:40%">
+                <mat-card-content>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center">
+                        <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100">
+                            <form novalidate autocomplete="off" [formGroup]="userDetails">
+                                <mat-card style="box-shadow: none;border-radius:16px;">
+                                    <mat-card-content>
+                                        <div fxLayout="row wrap" fxLayoutAlign="center center">
+                                            <h3 fxFlex="100" class="text-center" style="color:#1b80c3">
+                                                Register
+                                            </h3>
+                                            <div fxLayout="row wrap" fxLayoutAlign="center end">
+                                                <mat-form-field fxFlex="100">
+                                                    <input matInput placeholder="First Name" required formControlName="firstName" [(ngModel)]="register.firstname">
+                                                </mat-form-field>
+                                                <mat-form-field fxFlex="100">
+                                                        <input matInput placeholder="Last Name" required formControlName="lastName" [(ngModel)]="register.lastname">
+                                                    </mat-form-field>
+                                                <mat-form-field fxFlex="100">
+                                                    <input matInput placeholder="Email" required formControlName="email" [(ngModel)]="register.email">
+                                                </mat-form-field>
+                                                <span class="error" *ngIf="userDetails.get('email').touched && userDetails.get('email').hasError('required')">
+                                                    Email Required
+                                                </span>
+                                                <span class="error" *ngIf="userDetails.get('email').touched && userDetails.get('email').hasError('pattern')">
+                                                    invalid Email
+                                                </span>
+                                                <mat-form-field fxFlex="100">
+                                                        <input matInput placeholder="Mobile" required formControlName="mobile" [(ngModel)]="register.mobile">
+                                                </mat-form-field>
+                                                <mat-form-field fxFlex="100">
+                                                        <mat-select placeholder="Work Status" [(ngModel)]="register.workingstatus" formControlName="workingStatus">
+                                                          <mat-option *ngFor="let status of workstatus" [value]="status.value">
+                                                            {{ status.viewValue }}
+                                                          </mat-option>
+                                                        </mat-select>
+                                                      </mat-form-field>
+                                                      <mat-form-field fxFlex="100">
+                                                            <mat-select placeholder="Technologies" [(ngModel)]="register.interstedTech" formControlName="interestedTech">
+                                                              <mat-option *ngFor="let tech of technologies" [value]="tech.value" >
+                                                                {{ tech.viewValue }}
+                                                              </mat-option>
+                                                            </mat-select>
+                                                          </mat-form-field>
+                                                <div fxFlex="row" fxLayoutAlign="start start">
+                                                    <div fxFlex="100" fxLayoutAlign="center center">
+                                                        <button type="submit" mat-raised-button class="proceed-btn" (click)="onSubmit()" [disabled]="userDetails.invalid">
+                                                            Register
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-card-content>
+                                </mat-card>
+                            </form>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </main>
+</aside>

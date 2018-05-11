@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { useHash: true }),
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   declarations: [
     LoginComponent,
