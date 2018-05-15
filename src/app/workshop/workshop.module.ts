@@ -1,7 +1,9 @@
 import { UserService } from './users/users.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule,Router } from '@angular/router';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 
 
 import { EditComponent } from '../workshop/profile/edit/edit.component';
@@ -21,6 +23,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    MatToolbarModule,
+    MatCardModule,
     RouterModule.forRoot(routes, { useHash: true }),
   ],
   declarations: [

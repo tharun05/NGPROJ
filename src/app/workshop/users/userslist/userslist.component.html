@@ -1,1 +1,37 @@
-<p>user list works</p>
+<aside>
+    <article>
+        <mat-toolbar>
+            <h5>Users</h5>
+        </mat-toolbar>
+    </article>
+    <main>
+        <div fxLayout="row wrap">
+            <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33.333" fxFlex.lg="25">
+                <mat-card class="margin-side" class="course-card" style="height: 248px;cursor: pointer;" (click)="navigateToProfile()">
+                    <h3 class="topic-title capltilize">Tharun</h3>
+                    <div fxLayout="row wrap">
+                        <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33.333">
+                            <div class="hpair">
+                                <span>Email:</span>
+                                <span>Thaurndilliakr@gmail.com</span>
+                            </div>
+                            <div class="hpair">
+                                <span>Mobile:</span>
+                                <span>8989898999</span>
+                            </div>
+                            <div class="hpair">
+                                <span>City</span>
+                                <span>hyderbad</span>
+                            </div>
+                            <div class="hpair">
+                                <span>Company Name</span>
+                                <span>Tera Data</span>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+          
+            </div>
+        </div>
+    </main>
+</aside>
