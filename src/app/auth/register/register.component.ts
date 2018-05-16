@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Register} from '../../apex/entities/register.entity'
 import {FormBuilder,FormGroup,FormControl, Validators} from '@angular/forms';
+import { AuthService } from '../auth.service';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-register',
@@ -25,7 +27,7 @@ technologies = [
   {value:'Python',viewValue:'Python Dev'},
   {value:'Design',viewValue:'Design Dev'}
 ]
-  constructor(private formBuilder:FormBuilder) { 
+  constructor(private formBuilder:FormBuilder,private authService:AuthService,private router:Router) { 
     this.userDetails = this.formBuilder.group({
       'firstName':['',Validators.required],
       'lastName':['',Validators.required],
@@ -42,7 +44,8 @@ technologies = [
  
 
   onSubmit(){
-console.log(this.register)
-this.register = new Register();
+    // this.authService.register(this.userDetails)
+
+    this.router.navigate(['login'],null);
   }
 }

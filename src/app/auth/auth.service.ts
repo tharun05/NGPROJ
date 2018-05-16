@@ -15,11 +15,19 @@ export class AuthService {
 
   }
   
- login(data:any){
-   return this.http.post('http://172.33.34.1:3000/login',data)
+ login(data:any):Observable<any>{
+   this.url = this.host+ 'log' 
+   return this.http.post(this.url,data)
    .map(res=>{
      return res.json();
    })
  }
-
+  
+ register(data:any):Observable<any>{
+  this.url = this.host+ 'register' 
+  return this.http.post(this.url,data)
+  .map(res=>{
+    return res.json();
+  })
+}
 }
