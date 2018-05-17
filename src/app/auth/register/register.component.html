@@ -7,8 +7,8 @@
             </h2>
         </div>
 
-        <div fxLayout="row" fxLayoutAlign="end center" class="padding" style="height: 100vh;margin-right: 60px;">
-            <mat-card class="login-card padding-nill" style="position: fixed;border-radius:8px;width:28%;height:40%">
+        <div fxLayout="row wrap" fxLayoutAlign="end center" class="padding" style="height: 100vh;margin-right: 60px;">
+            <mat-card class="login-card padding-nill" style="position: fixed;border-radius:8px;width:28%">
                 <mat-card-content>
                     <div fxLayout="row wrap" fxLayoutAlign="center center">
                         <div fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lg="100">
@@ -54,7 +54,7 @@
                                                           </mat-form-field>
                                                 <div fxFlex="row" fxLayoutAlign="start start">
                                                     <div fxFlex="100" fxLayoutAlign="center center">
-                                                        <button type="submit" mat-raised-button class="proceed-btn" (click)="onSubmit()" [disabled]="userDetails.invalid">
+                                                        <button type="button" mat-raised-button class="proceed-btn" (click)="onSubmit()">
                                                             Register
                                                         </button>
                                                     </div>

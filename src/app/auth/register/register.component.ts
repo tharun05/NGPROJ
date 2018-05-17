@@ -44,8 +44,12 @@ technologies = [
  
 
   onSubmit(){
-    // this.authService.register(this.userDetails)
+    this.authService.register(this.register).subscribe((data:any)=>{
+      if(data){
+        this.router.navigate(['signin'],null);
 
-    this.router.navigate(['login'],null);
+      }
+    })
+
   }
 }

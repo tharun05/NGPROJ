@@ -16,7 +16,7 @@ export class AuthService {
   }
   
  login(data:any):Observable<any>{
-   this.url = this.host+ 'log' 
+   this.url = this.host+ 'login' 
    return this.http.post(this.url,data)
    .map(res=>{
      return res.json();
@@ -24,10 +24,12 @@ export class AuthService {
  }
   
  register(data:any):Observable<any>{
-  this.url = this.host+ 'register' 
+  this.url = this.host+ "register"
   return this.http.post(this.url,data)
   .map(res=>{
-    return res.json();
+    res.json();
+    
+    return JSON.stringify(res.json());
   })
 }
 }
