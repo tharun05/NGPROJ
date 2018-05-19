@@ -13,8 +13,13 @@ export class UserService {
   baseUrl: string;
   userDetails: any;
   token: string;
-  constructor() {
+  constructor(private http:Http) {
   }
-  
+  searchUsers():Observable<any>{
+    this.url = this.host + 'users'
+   return this.http.get(this.url).map(res=>{
+     return res.json();
+   })
+  }
 
 }

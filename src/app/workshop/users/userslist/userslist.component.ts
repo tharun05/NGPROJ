@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{Routes,Router} from '@angular/router'
 import { Route } from '@angular/compiler/src/core';
+import {UserService} from '../users.service'
 @Component({
   selector: 'app-userslist',
   templateUrl: './userslist.component.html',
@@ -8,7 +9,8 @@ import { Route } from '@angular/compiler/src/core';
 })
 export class UserslistComponent implements OnInit {
 userList:any;
-  constructor(private router:Router) { 
+  constructor(private router:Router,private userService:UserService) { 
+    this.searchUsers();
   }
 
   ngOnInit() {
@@ -16,6 +18,13 @@ userList:any;
   navigateToProfile(){
     this.router.navigate(['userprofile'],{queryParams: {id:17185318726}})
 
+  }
+
+  searchUsers(){
+    this.userService.searchUsers().subscribe((data)=>{
+      console.log(data)
+      this.userList = data.message;
+    })
   }
 
 }

@@ -25,7 +25,7 @@ const routes: Routes = [
     CommonModule,
     MatToolbarModule,
     MatCardModule,
-    RouterModule.forRoot(routes, { useHash: true }),
+    RouterModule.forRoot(routes, { useHash: false }),
   ],
   declarations: [
     EditComponent,

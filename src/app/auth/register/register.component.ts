@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Register} from '../../apex/entities/register.entity'
 import {FormBuilder,FormGroup,FormControl, Validators} from '@angular/forms';
 import { AuthService } from '../auth.service';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +10,7 @@ import {Router} from '@angular/router'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
+  successMessage:string;
   register:Register = new Register();
   userDetails:FormGroup;
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
@@ -44,8 +44,13 @@ technologies = [
  
 
   onSubmit(){
-    // this.authService.register(this.userDetails)
+    this.authService.register(this.register).subscribe((data:any)=>{
+      console.log(data)
+      this.successMessage = data.message;
+        // this.router.navigate(['signin']);
+        this.register = new Register();
+      
+    })
 
-    this.router.navigate(['login'],null);
   }
 }

@@ -28,7 +28,7 @@ const routes: Routes = [
     FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
-    RouterModule.forRoot(routes, { useHash: true }),
+    RouterModule.forRoot(routes, { useHash: false }),
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
