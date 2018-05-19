@@ -30,6 +30,7 @@
     "agm-direction": "0.2.2",
     "bootstrap": "^3.3.7",
     "core-js": "2.4.1",
+    "csvtojson": "^1.1.12",
     "flex-layout": "1.0.1",
     "flex-layout-srcs": "github:angular/flex-layout",
     "hammerjs": "^2.0.8",
