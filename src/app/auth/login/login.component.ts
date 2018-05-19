@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,FormControl, Validators} from '@angular/forms';
 import {Login} from '../../apex/entities/login.entity';
 import {AuthService} from '../auth.service'
-import {Router} from '@angular/router';
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

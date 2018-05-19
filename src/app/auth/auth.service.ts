@@ -32,4 +32,13 @@ export class AuthService {
     return JSON.stringify(res.json());
   })
 }
+setPassword(data): Observable<any> {
+  this.url = this.host + "password";
+  return this.http.post(this.url, data )
+    .map(response =>{
+         response.json();
+       return response.json()
+    }   
+    )    
+}
 }
