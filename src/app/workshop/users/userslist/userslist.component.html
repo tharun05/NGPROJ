@@ -7,6 +7,10 @@
     <main>
         <div fxLayout="row wrap">
             <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33.333" fxFlex.lg="25">
+                    <div class="example-container">
+                            <mat-form-field>
+                              <input matInput placeholder="Search">
+                            </mat-form-field>   </div>                      
                 <mat-card class="margin-side" class="course-card" style="height: 248px;cursor: pointer;" (click)="navigateToProfile(user)" *ngFor="let user of userData">
                     <h3 class="topic-title capltilize">{{user.firstname}}</h3>
                     <div fxLayout="row wrap">

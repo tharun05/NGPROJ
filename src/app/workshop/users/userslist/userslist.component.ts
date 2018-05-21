@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{Routes,Router} from '@angular/router'
 import { Route } from '@angular/compiler/src/core';
 import {UserService} from '../users.service'
+
 @Component({
   selector: 'app-userslist',
   templateUrl: './userslist.component.html',

@@ -11,6 +11,7 @@ import { UserslistComponent } from '../workshop/users/userslist/userslist.compon
 
 import { ProfileService } from '../workshop/profile/profile.service';
 import { MatInputModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 const routes: Routes = [
   { path: 'myProfile-edit', component: EditComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatCardModule,
     RouterModule.forRoot(routes, { useHash: false }),
+    MatFormFieldModule
   ],
   declarations: [
     EditComponent,
