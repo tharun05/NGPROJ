@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import{Routes,Router} from '@angular/router'
 import { Route } from '@angular/compiler/src/core';
 import {UserService} from '../users.service'
+import {FormBuilder,FormGroup,FormControl, Validators} from '@angular/forms';
+import {ReverseString} from '../../pipe'
 @Component({
   selector: 'app-userslist',
   templateUrl: './userslist.component.html',
@@ -9,8 +11,14 @@ import {UserService} from '../users.service'
 })
 export class UserslistComponent implements OnInit {
 userList:any;
-  constructor(private router:Router,private userService:UserService) { 
+userDetails:FormGroup;
+
+iFilter: any = "";
+  constructor(private router:Router,private userService:UserService,private formBuilder:FormBuilder) { 
     this.searchUsers();
+    this.userDetails = this.formBuilder.group({
+      'name':['',[Validators.required]],
+    })
   }
 
   ngOnInit() {
