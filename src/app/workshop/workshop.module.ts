@@ -12,6 +12,8 @@ import { UserprofileComponent } from '../workshop/users/userprofile/userprofile.
 import { UserslistComponent } from '../workshop/users/userslist/userslist.component';
 import { ProfileService } from '../workshop/profile/profile.service';
 import {ReverseString,FilterPipe} from './pipe'
+import { MatSidenavModule} from '@angular/material';
+import {MatListModule} from '@angular/material/list';
 
 const routes: Routes = [
   { path: 'myProfile-edit', component: EditComponent},
@@ -27,6 +29,8 @@ const routes: Routes = [
     MatCardModule,
     MatInputModule,
     FormsModule,
+    MatSidenavModule,
+    MatListModule,
     RouterModule.forRoot(routes, { useHash: false }),
   ],
   declarations: [
