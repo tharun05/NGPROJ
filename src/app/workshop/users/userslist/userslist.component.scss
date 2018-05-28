@@ -34,3 +34,29 @@ aside {
     margin: auto;
     overflow: scroll !important;
 }
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #003A64;
+  }
+  .exapmple-sidenav{
+      background-color: #003A64;
+      width:200px;
+      color:#fff;
+  }
+
+::ng-deep .mat-list-item-content{
+      color:#fff;
+      text-align: center;
+    
+}
+
+::ng-deep .mat-list-item-content:hover{
+    background-color: #eff4ff;
+    opacity: 0.3;
+    color: #000;
+    font-weight: bold;
+}

@@ -48,11 +48,6 @@ export class FilterPipe implements PipeTransform{
     }
 }
 
-
-
-
-
-
 @Pipe({name:'reverseString'})
 export class ReverseString implements PipeTransform{
     transform(value:string):string{

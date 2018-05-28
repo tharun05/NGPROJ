@@ -12,7 +12,7 @@ import {ReverseString} from '../../pipe'
 export class UserslistComponent implements OnInit {
 userList:any;
 userDetails:FormGroup;
-
+showFiller = false;
 iFilter: any = "";
   constructor(private router:Router,private userService:UserService,private formBuilder:FormBuilder) { 
     this.searchUsers();
